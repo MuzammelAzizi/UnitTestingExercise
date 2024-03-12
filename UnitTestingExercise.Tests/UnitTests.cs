@@ -13,53 +13,68 @@ namespace UnitTestingExercise.Tests
 
             //Arrange
             // create a Calculator object
-            
+            var cal = new Calculator();
 
             //Act
-                // call the Add method that is located in the Calculator class
-                // and store its result in a variable named actual
+            // call the Add method that is located in the Calculator class
+            // and store its result in a variable named actual
+            int actual = cal.Add(num1, num2, num3);
 
             //Assert
-                //Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
+        [InlineData(5, -5, 0)]//Add test data <-------
+        [InlineData(6, -4, 2)]
+        [InlineData(-1, -1, 0)]
+        [InlineData(0, 0, 0)]
         public void SubtractTest(int minuend, int subtrhend, int expected)
         {
-            //Start Step 5 here:
-
+            //Start Step 5 here:           
             //Arrange
 
+            var cal = new Calculator();
+
             //Act
+            double actual = cal.Subtract( minuend, subtrhend);
 
             //Assert
+            Assert.Equal(expected, actual);
 
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
-        public void MultiplyTest(int num1, int num2, int expected)
+        [InlineData(3, 3, 6)]//Add test data <-------
+        [InlineData(4, 4, 16)]
+        public void MultiplyTest(int x, int y, int expected)
         {
             //Start Step 7 here:
 
             //Arrange
+            var cal = new Calculator();
 
             //Act
+            int actual = cal.Multiply(x, y);
 
             //Assert
-
+            Assert.Equal(expected, actual);
         }
 
         [Theory]
-        [InlineData()]//Add test data <-------
-        public void DivideTest(int num1, int num2, int expected)
+        [InlineData(3, 1, 3)]//Add test data <-------
+        [InlineData(0, 0, 0)]
+        [InlineData(-4, -4, 1)]
+        public void DivideTest(int a, int b, int expected)
         {
             //Arrange
+            var cal = new Calculator();
 
             //Act
+            int actual = cal.Divide(a, b);
 
             //Assert
+             Assert.Equal(expected, actual);
 
         }
 
