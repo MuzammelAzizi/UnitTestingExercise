@@ -25,8 +25,7 @@ namespace UnitTestingExercise.Tests
         }
 
         [Theory]
-        [InlineData(5, -5, 0)]//Add test data <-------
-        [InlineData(6, -4, 2)]
+        //Add test data <-------        
         [InlineData(-1, -1, 0)]
         [InlineData(0, 0, 0)]
         public void SubtractTest(int minuend, int subtrhend, int expected)
@@ -37,7 +36,7 @@ namespace UnitTestingExercise.Tests
             var cal = new Calculator();
 
             //Act
-            double actual = cal.Subtract( minuend, subtrhend);
+            var actual = cal.Subtract( minuend, subtrhend);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -45,7 +44,7 @@ namespace UnitTestingExercise.Tests
         }
 
         [Theory]
-        [InlineData(3, 3, 6)]//Add test data <-------
+        [InlineData(3, 3, 9)]//Add test data <-------
         [InlineData(4, 4, 16)]
         public void MultiplyTest(int x, int y, int expected)
         {
@@ -62,8 +61,7 @@ namespace UnitTestingExercise.Tests
         }
 
         [Theory]
-        [InlineData(3, 1, 3)]//Add test data <-------
-        [InlineData(0, 0, 0)]
+        [InlineData(3, 1, 3)]//Add test data <-------       
         [InlineData(-4, -4, 1)]
         public void DivideTest(int a, int b, int expected)
         {
